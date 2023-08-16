@@ -27,7 +27,7 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
   return (
     <div className="flex-col">
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <Heading title="Dashboard" description="Overview of your store" />
+        <Heading title="Dashboard" description="Resumen de tu tienda" />
         <Separator />
         <div className="grid gap-4 grid-cols-3">
           <Card>
@@ -62,7 +62,7 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
         </div>
         <Card className="col-span-4">
           <CardHeader>
-            <CardTitle>Overview</CardTitle>
+            <CardTitle>Resumen</CardTitle>
           </CardHeader>
           <CardContent className="pl-2">
             <Overview data={graphRevenue} />

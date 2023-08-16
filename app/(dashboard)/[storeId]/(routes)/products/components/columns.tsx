@@ -19,7 +19,7 @@ export type ProductColumn = {
 export const columns: ColumnDef<ProductColumn>[] = [
   {
     accessorKey: "name",
-    header: "Name",
+    header: "Nombre",
   },
   {
     accessorKey: "isArchived",
@@ -31,15 +31,15 @@ export const columns: ColumnDef<ProductColumn>[] = [
   },
   {
     accessorKey: "price",
-    header: "Price",
+    header: "Precio",
   },
   {
     accessorKey: "category",
-    header: "Category",
+    header: "Categoria",
   },
   {
     accessorKey: "size",
-    header: "Size",
+    header: "Tamaño",
   },
   {
     accessorKey: "color",
@@ -53,7 +53,7 @@ export const columns: ColumnDef<ProductColumn>[] = [
   },
   {
     accessorKey: "createdAt",
-    header: "Date",
+    header: "Fecha",
   },
   {
     id: "actions",

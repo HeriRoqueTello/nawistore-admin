@@ -47,10 +47,10 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const title = initialData ? 'Edit category' : 'Create category';
-  const description = initialData ? 'Edit a category.' : 'Add a new category';
-  const toastMessage = initialData ? 'Category updated.' : 'Category created.';
-  const action = initialData ? 'Save changes' : 'Create';
+  const title = initialData ? 'Editar categoria' : 'Crear categoria';
+  const description = initialData ? 'Editar una categoria.' : 'Agregar una nueva categoria';
+  const toastMessage = initialData ? 'Categoria actualizada.' : 'Categoria creada.';
+  const action = initialData ? 'Guardar cambios' : 'Crear';
 
   const form = useForm<CategoryFormValues>({
     resolver: zodResolver(formSchema),
@@ -84,7 +84,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
       await axios.delete(`/api/${params.storeId}/categories/${params.categoryId}`);
       router.refresh();
       router.push(`/${params.storeId}/categories`);
-      toast.success('Category deleted.');
+      toast.success('Categoria eliminada.');
     } catch (error: any) {
       toast.error('Make sure you removed all products using this category first.');
     } finally {
@@ -123,9 +123,9 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Nombre</FormLabel>
                   <FormControl>
-                    <Input disabled={loading} placeholder="Category name" {...field} />
+                    <Input disabled={loading} placeholder="Nombre de la categoria" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -136,11 +136,11 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
               name="billboardId"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Billboard</FormLabel>
+                  <FormLabel>Portada</FormLabel>
                   <Select disabled={loading} onValueChange={field.onChange} value={field.value} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue defaultValue={field.value} placeholder="Select a billboard" />
+                        <SelectValue defaultValue={field.value} placeholder="Seleccionar portada" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>

@@ -45,10 +45,10 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const title = initialData ? 'Edit billboard' : 'Create billboard';
-  const description = initialData ? 'Edit a billboard.' : 'Add a new billboard';
-  const toastMessage = initialData ? 'Billboard updated.' : 'Billboard created.';
-  const action = initialData ? 'Save changes' : 'Create';
+  const title = initialData ? 'Editar portada' : 'Crear portada';
+  const description = initialData ? 'Editar una portada.' : 'Agregar una nueva portada';
+  const toastMessage = initialData ? 'Portada actualizada.' : 'Portada creada.';
+  const action = initialData ? 'Guardar cambios' : 'Crear';
 
   const form = useForm<BillboardFormValues>({
     resolver: zodResolver(formSchema),
@@ -82,7 +82,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
       await axios.delete(`/api/${params.storeId}/billboards/${params.billboardId}`);
       router.refresh();
       router.push(`/${params.storeId}/billboards`);
-      toast.success('Billboard deleted.');
+      toast.success('Portada eliminada.');
     } catch (error: any) {
       toast.error('Make sure you removed all categories using this billboard first.');
     } finally {
@@ -139,9 +139,9 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
               name="label"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Label</FormLabel>
+                  <FormLabel>Titulo</FormLabel>
                   <FormControl>
-                    <Input disabled={loading} placeholder="Billboard label" {...field} />
+                    <Input disabled={loading} placeholder="Titulo de la portada" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
