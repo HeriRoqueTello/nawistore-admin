@@ -1,5 +1,5 @@
-import { format } from "date-fns";
-
+import { format } from "date-fns/";
+import { es } from "date-fns/locale";
 import prismadb from "@/lib/prismadb";
 
 import { BillboardColumn } from "./components/columns"
@@ -22,7 +22,7 @@ const BillboardsPage = async ({
   const formattedBillboards: BillboardColumn[] = billboards.map((item) => ({
     id: item.id,
     label: item.label,
-    createdAt: format(item.createdAt, 'MMMM do, yyyy'),
+    createdAt: format(item.createdAt, 'MMMM do, yyyy', { locale: es }),
   }));
 
   return (
